@@ -13,4 +13,16 @@ const getAllGames = axiosCreate.get("/games?key=" + key);
 const getListByGenreId = (id) =>
   axiosCreate.get("/games?key=" + key + "&genres=" + id);
 
-export default { getGenreList, getAllGames, getListByGenreId };
+const getGameBySearch = async (searchTerm) => {
+  try {
+    const response = await axiosCreate.get(
+      "/games?key=" + key + "&search=" + searchTerm
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error;
+  }
+};
+
+export default { getGenreList, getAllGames, getListByGenreId, getGameBySearch };

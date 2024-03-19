@@ -12,14 +12,13 @@ function GenreList({ genreId, selectedGenrename }) {
   const fetchGenreList = () => {
     GlobalAPI.getGenreList
       .then((response) => {
-        // console.log(response.data.results);
         setGenreList(response.data.results);
       })
       .catch((error) => console.log(error));
   };
   return (
     <div className="">
-      <h2 className="text-[30px] font-bold dark:text-white ">Genre</h2>
+      <h2 className="text-[30px] font-bold dark:text-white pb-3">Genre</h2>
       {genreList.map((item, index) => (
         <div
           onClick={() => {
@@ -31,7 +30,7 @@ function GenreList({ genreId, selectedGenrename }) {
           }}
           key={item.id}
           className={`flex gap-2 items-center mb-2 cursor-pointer hover:bg-gray-200 p-2 group rounded-lg hover:dark:bg-gray-600
-        ${activeIndex == index ? "bg-gray-300 dark:bg-grey-600" : null}`}
+        ${activeIndex == index ? " dark:bg-grey-800" : null}`}
         >
           <img
             src={item.image_background}
@@ -41,7 +40,7 @@ function GenreList({ genreId, selectedGenrename }) {
             }`}
           />
           <h3
-            className={`dark:text-white text-[18px] group-hover:font-bold transition-all ease-out duration-300 ${
+            className={`dark:text-white text-[18px] group-hover:font-bold transition-all ease-out duration-300 pl-3 ${
               activeIndex == index ? "font-bold" : null
             } `}
           >

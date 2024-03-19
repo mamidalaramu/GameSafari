@@ -1,10 +1,6 @@
 import PropTypes from "prop-types";
-import { useEffect } from "react";
 
 function GamesByGenreId({ gameList, selectedGenrename }) {
-  useEffect(() => {
-    // console.log(gameList);
-  });
   return (
     <div>
       <h2 className="font-bold text-[30px] dark:text-white mt-5">
@@ -14,7 +10,7 @@ function GamesByGenreId({ gameList, selectedGenrename }) {
         {gameList.map((item) => (
           <div
             key={item.id}
-            // bg-[#76a8f75e]
+      
             className="  p-3 rounded-lg pb-10 h-full
             hover:scale-110 transition-all ease-in-out duration-200 cursor-pointer
             "
